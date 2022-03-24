@@ -16,8 +16,10 @@
 
 # Load packages -----------------------
 library(shiny)
+library(tidyverse)
 
 # Load data ---------------------------
+XXX <- read_csv(XXX.csv)
 
 # Source helper functions -------------
 source("helpers.R")

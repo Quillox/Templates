@@ -16,8 +16,10 @@ shinyUI(fluidPage(
 
     ## Main panel: *Output() ----------
     mainPanel(
-        ### Output XXX ----------------
-        textOutput(outputId = "XXX")
+      img(src = "XXX.png")
+      ### Output XXX ----------------
+      textOutput(outputId = "XXX")
+
     )
   )
 ))
