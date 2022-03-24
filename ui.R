@@ -16,18 +16,15 @@ shinyUI(fluidPage(
 
     ## Main panel: *Output() ----------
     mainPanel(
-      ### Output test ----------------
+      ### Output tests ----------------
       textOutput(outputId = "test"),
 
-      ### Output template image -------
       h2("Template image:"),
       img(src = "XXX.png"),
 
-      ### Output template table -------
       h2("Template table:"),
       tableOutput(outputId = "csv"),
 
-      ### Output template function ----
       h2("Template function:"),
       textOutput(outputId = "fct")
     )
