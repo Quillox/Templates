@@ -34,6 +34,11 @@ shinyServer(function(input, output, session) {
     # Define user specific objects inside shinyServer(), but outside of
     # render* calls. Such as user's session information.
 
+    # Make use of the reactive({}) expressions to avoid redundant calculations.
+    # Only call a reactive expression from within a reactive or a render*
+    # function. Reactive expressions save their results, and will only
+    # re-calculate if their input has changed
+
     ## Session information ------------
     cdata <- session$clientData
 
