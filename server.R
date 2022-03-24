@@ -19,7 +19,7 @@ library(shiny)
 library(tidyverse)
 
 # Load data ---------------------------
-XXX <- read_csv(XXX.csv)
+XXX.csv <- read_csv("data/XXX.csv")
 
 # Source helper functions -------------
 source("helpers.R")
@@ -37,11 +37,21 @@ shinyServer(function(input, output, session) {
     ## Session information ------------
     cdata <- session$clientData
 
-    ## Output XXX ---------------------
-    output$XXX <- renderText(
+    ## Output tests --------------------
+    output$test <- renderText(
         # Run every time a user changes a widget that output$XXX depends on.
         expr = {
-            paste("Test input:", input$XXX)
+            paste("Test input:", input$test)
         }
+    )
+    output$csv <- renderTable(
+        expr = {
+          XXX.csv
+        }
+    )
+    output$fct <- renderText(
+      expr = {
+        hello_world()
+      }
     )
 })

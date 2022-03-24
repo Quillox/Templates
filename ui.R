@@ -1,8 +1,8 @@
 # UI ----------------------------------
 shinyUI(fluidPage(
   ## Title ----------------------------
-  titlePanel(title = "XXX",
-             windowTitle = "XXX"),
+  titlePanel(title = "Template",
+             windowTitle = "Template"),
 
   sidebarLayout(
     ## Sidebar panel: *Input() --------
@@ -10,16 +10,26 @@ shinyUI(fluidPage(
         ### Help text -----------------
         helpText("Help text"),
 
-        ### Input XXX -----------------
-        textInput(inputId = "XXX", label = "XXX")
+        ### Input test -----------------
+        textInput(inputId = "test", label = "Test input")
     ),
 
     ## Main panel: *Output() ----------
     mainPanel(
-      img(src = "XXX.png")
-      ### Output XXX ----------------
-      textOutput(outputId = "XXX")
+      ### Output test ----------------
+      textOutput(outputId = "test"),
 
+      ### Output template image -------
+      h2("Template image:"),
+      img(src = "XXX.png"),
+
+      ### Output template table -------
+      h2("Template table:"),
+      tableOutput(outputId = "csv"),
+
+      ### Output template function ----
+      h2("Template function:"),
+      textOutput(outputId = "fct")
     )
   )
 ))
