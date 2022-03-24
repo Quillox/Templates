@@ -1,3 +1,19 @@
+# App information ---------------------
+#
+# App name:
+#
+# App purpose:
+#
+# Date created:
+#
+# Author: David Parker
+#
+# Email:
+#
+# Notes:
+#
+# -------------------------------------
+
 # Load packages -----------------------
 library(shiny)
 
