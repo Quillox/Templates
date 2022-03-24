@@ -9,6 +9,8 @@ This serves as a simple template for a RShiny app with a sidebar. There are a fe
 - **_data_** contains the data to be loaded into server.R.
 - **_www_** contains images to be shown in ui.R.
 
+I chose to use two seperate files instead of one "app.R" file because when using only one file, the autocomplete for your _input$_ and _output$_ does not work, which is very frustrating.
+
 ## When using RStudio:
 The comments are written with markdown style headers:
 - "# ----"
