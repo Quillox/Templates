@@ -16,13 +16,14 @@
 
 # Load packages -----------------------
 library(shiny)
+library(DT)
 library(tidyverse)
 
 # Load data ---------------------------
 XXX.csv <- read_csv("data/XXX.csv")
 
 # Source helper functions -------------
-source("helpers.R")
+# All the *.R files in the R/ directory are automatically loaded in
 
 # Shiny will only run the code outside of the shinySever function once, which
 # is all you need to set your server up to run the R expressions contained in
@@ -49,7 +50,7 @@ shinyServer(function(input, output, session) {
             paste("Test input:", input$test)
         }
     )
-    output$csv <- renderTable(
+    output$csv <- renderDT(
         expr = {
           XXX.csv
         }
