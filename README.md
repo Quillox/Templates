@@ -7,7 +7,7 @@ This serves as a simple template for a RShiny app with a sidebar. There are a fe
   - ui.R contains the code for the layout of the webpage page which the users will interact with.
 - **_data_** contains the data to be loaded into server.R.
 - **_www_** contains images to be shown in ui.R.
-- - **_R_** contains R scripts that will be sourced when the server starts.
+- **_R_** contains R scripts that will be sourced when the server starts.
 
 I chose to use two seperate files instead of one "app.R" file because when using only one file, the autocomplete for your _input$_ and _output$_ does not work, which is very frustrating.
 
