@@ -21,6 +21,8 @@ library(tidyverse)
 
 # Load data ---------------------------
 XXX.csv <- read_csv("data/XXX.csv")
+df_chroma <- read_csv("data/DARPin_chromato.csv")
+df_chroma <- drop_na(df_chroma)
 
 # Source helper functions -------------
 # All the *.R files in the R/ directory are automatically loaded in
@@ -59,5 +61,25 @@ shinyServer(function(input, output, session) {
       expr = {
         hello_world()
       }
+    )
+
+    ## plot
+    dat <- reactive({
+      df_chroma %>% filter(between(Volume,
+                                   min(input$slider),
+                                   max(input$slider)))
+    })
+    output$plot <- renderPlot(
+      expr = {
+        ggplot(data = dat(), aes(x = Volume, y = Signal, color = Analyte)) +
+          geom_line(lwd = 1) +
+          xlab("Volume (mL)") +
+          ylab("Relative Signal") +
+          labs(title = "Chromatograms")
+      }
+    )
+    ## table
+    output$table <- renderDT(
+      expr = df_chroma
     )
 })

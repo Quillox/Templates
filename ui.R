@@ -2,7 +2,8 @@
 shinyUI(navbarPage(
   title = "Template",
   # navbarMenu Tests ------------------
-  navbarMenu("Tests",
+  navbarMenu(
+    title = "Tests",
     ## tabPanel Input/output test -----
     tabPanel(
       title = "Input/output test",
@@ -54,9 +55,27 @@ shinyUI(navbarPage(
   ),
   ## tabPanel Panel 1 -----------------
   tabPanel(
-    title = "Panel 1",
+    title = "Chromatography",
     fluidPage(
-      h1("Hello")
+      sidebarLayout(
+        sidebarPanel(
+          sliderInput(inputId = "slider",
+          label = "Volume (mL)",
+          min = round(min(df_chroma$Volume), 1),
+          max = round(max(df_chroma$Volume), 1),
+          step = 1,
+          value = c(round(min(df_chroma$Volume), 1),
+                    round(max(df_chroma$Volume), 1))
+          )
+        ),
+        mainPanel(
+          tabsetPanel(
+            tabPanel("Plot", plotOutput(outputId = "plot")),
+            tabPanel("Summary", verbatimTextOutput("summary")),
+            tabPanel("Table", DTOutput("table"))
+          )
+        )#mainPanel
+      )
     )
-  )
-))
+  )# tabPanel
+))# UI
