@@ -12,18 +12,6 @@
 #
 # Notes:
 #
-#
-
-# Load packages -----------------------
-library(shiny)
-library(DT)
-library(tidyverse)
-
-# Load data ---------------------------
-XXX.csv <- read_csv("data/XXX.csv")
-df_chroma <- read_csv("data/DARPin_chromato.csv")
-df_chroma <- drop_na(df_chroma) %>%
-  rename("Experiment" = "Analyte")
 
 # Source helper functions -------------
 # All the *.R files in the R/ directory are automatically loaded in

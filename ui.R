@@ -1,5 +1,4 @@
 # UI ----------------------------------
-library(shinythemes)
 shinyUI(navbarPage(
   theme = shinytheme("slate"),
   title = "Template",
