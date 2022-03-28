@@ -2,9 +2,10 @@
 This serves as a simple template for a RShiny app with a sidebar. There are a few comments explaining when each part of the code is run.
 
 ## Folders:
-- **_Root_** has 2 files:
+- **_Root_** has 3 files:
   - server.R contains the code which runs on the host computer when running the app.
   - ui.R contains the code for the layout of the webpage page which the users will interact with.
+  - global.R contains the library and dataset loads.
 - **_data_** contains the data to be loaded into server.R.
 - **_www_** contains images to be shown in ui.R.
 - **_R_** contains R scripts that will be sourced when the server starts.

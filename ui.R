@@ -1,6 +1,7 @@
 # UI ----------------------------------
+
 shinyUI(navbarPage(
-  theme = shinytheme("slate"),
+  # theme = shinytheme("slate"),
   title = "Template",
   # navbarMenu Tests ------------------
   navbarMenu(
@@ -25,7 +26,7 @@ shinyUI(navbarPage(
           # *Output()
           mainPanel(
             ### Output tests ----------
-            textOutput(outputId = "test"),
+            textOutput(outputId = "test")
           )
         )
       )
