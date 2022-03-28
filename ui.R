@@ -1,5 +1,7 @@
 # UI ----------------------------------
+library(shinythemes)
 shinyUI(navbarPage(
+  theme = shinytheme("slate"),
   title = "Template",
   # navbarMenu Tests ------------------
   navbarMenu(
@@ -8,6 +10,7 @@ shinyUI(navbarPage(
     tabPanel(
       title = "Input/output test",
       fluidPage(
+        shinythemes::themeSelector(),
         sidebarLayout(
           ### Sidebar panel -----------
           # *Input()

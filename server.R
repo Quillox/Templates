@@ -22,7 +22,8 @@ library(tidyverse)
 # Load data ---------------------------
 XXX.csv <- read_csv("data/XXX.csv")
 df_chroma <- read_csv("data/DARPin_chromato.csv")
-df_chroma <- drop_na(df_chroma)
+df_chroma <- drop_na(df_chroma) %>%
+  rename("Experiment" = "Analyte")
 
 # Source helper functions -------------
 # All the *.R files in the R/ directory are automatically loaded in
@@ -71,7 +72,7 @@ shinyServer(function(input, output, session) {
     })
     output$plot <- renderPlot(
       expr = {
-        ggplot(data = dat(), aes(x = Volume, y = Signal, color = Analyte)) +
+        ggplot(data = dat(), aes(x = Volume, y = Signal, color = Experiment)) +
           geom_line(lwd = 1) +
           xlab("Volume (mL)") +
           ylab("Relative Signal") +
