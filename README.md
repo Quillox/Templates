@@ -1,3 +1,6 @@
+# Update
+There are much better and more official ways of making a template/file structure such as [usethis](https://usethis.r-lib.org/), [the actual Shiny function](https://shiny.rstudio.com/reference/shiny/1.7.0/shinyAppTemplate.html) or even the button found in the RStudio menu (file > new project > _you choose_ > R Package).
+
 # Shiny-App-Template
 This serves as a simple template for a RShiny app with a sidebar. There are a few comments explaining when each part of the code is run.
 
@@ -20,3 +23,6 @@ The comments are written with markdown style headers:
 
 
 Which makes a nice outline when you push the "show document outline" button (ctrl+shift+o).
+
+## Notes
+This is missing the abstraction provided by [modules](https://shiny.rstudio.com/articles/modules.html).
