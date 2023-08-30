@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+
+\usepackage[sorting=none]{biblatex}
+\addbibresource{bib.bib}
+
+\usepackage{graphicx}
+\graphicspath{ {./pics/} }
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green},
+    morecomment=[l][\color{magenta}]{\#},
+    showstringspaces=false,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    frameround=tttt,
+    rulecolor=\color{black},
+    xleftmargin=15pt,
+    xrightmargin=15pt,
+    framexleftmargin=15pt,
+    framexrightmargin=15pt,
+    aboveskip=10pt,
+    belowskip=10pt,
+    literate={=}{{\textcolor{blue}{=}}}1
+}
+
+
+\usepackage{float}
+% For the pandas dataframe to latex tables
+\usepackage{booktabs}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    width=170mm,
+    top=25mm,
+    bottom=25mm
+}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Report Title}
+\fancyhead[R]{\rightmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor = blue
+    }
+
+
+% Opening
+\title{Report Title}
+\author{David Parker}
+\date{\today}
+\begin{document}
+
+\input{title.tex}
+
+\input{abstract.tex}
+% What you did, what you found and it's importance (about 200 words)
+% One or two sentences per section.
+
+\setcounter{tocdepth}{2}
+\tableofcontents{}
+\pagebreak
+
+% A few useful suggestions for writing clear scientific documents from Amedeo Caflisch
+% 0.  Avoid subjective or qualitative statements, e.g.,   "The protonation state of the tertiary amino of compounds mm-nn is probably charged."    or
+% "Compound mm is expected to be more potent than compound nn because it better fits in the pocket according to visual analysis."
+% try to structure each (sub)section by decomposing it into paragraphs. The initial sentence of each new paragraph should start with a tab, as in most printed papers.
+% If possible, start a new (sub)section with a question or a sentence that describes the motivation, e.g., "Next we asked the question if the sampling had reached convergence. Block averaging was carried out by dividing the 20 independent runs into two sets of 10 simulations each. (....)"      or
+%         "First we asked the question if the loop between x and y is involved in product release."
+% 3. Split long sentences into two shorter ones.  Do not use more than one "which" in a single sentence.
+% 4. The figure captions should be concise and, if possible, self-explanatory, i.e., the essence of each figure should be explained by its (short!) caption without the need to read the related part of the text.
+% 5. Define all abbreviations the first time they are used.
+% 6. Always put a space between numerical value and units, e.g., 5 ms (instead of 5ms).
+% 7. Always show page numbers.
+% 8. Single-digit integers should be spelled out in characters, e.g., "a total of five MD runs".
+%     Integers > 9 should be given as numbers, e.g., "a total of 20 MD runs".  One exception is at the beginning of a sentence where all integers should be in characters, e.g.,
+%     "Twenty MD runs were started from ..."
+
+
+\section{Introduction} \label{sec:intro}
+\input{intro.tex}
+% Introduction - three paragraph strategy
+% 	• set stage on current state of the art = broad context
+% 	• problem statement / research question and hypothesis
+% 	• what you did, what you found,  summary of paper and it‘s organization
+
+% Fill in paragraphs: 
+% • set topic with first sentence (intro sentence
+% • support with following sentences
+% • conclude with a transition sentence to next paragraph whenever possible (wrap up)
+
+% This is a citation\cite{Marchand2020}.
+
+% \begin{figure}[h!]
+%    \centering
+%    \includegraphics[scale=0.3]{2022-06-26-12-22-47.png}
+%    \caption{This is a figure}
+%    \label{fig:my_label}
+% \end{figure}
+
+% \begin{table}[h!]
+%    \centering
+%    \begin{tabular}{cc}
+%       col & col \\
+%       \hline
+%       row & row
+%    \end{tabular}
+%    \caption{This is a table}
+%    \label{tab:my_label}
+% \end{table}
+
+\section{Methods} \label{sec:methods}
+\input{methods.tex}
+% Methods: \\
+% all details necessary to recreate your experiment \\
+% – be concise and “dry”/ matter of factly
+% • ethical approval\\
+% • subject data\\
+% • used equipment\\
+% • experimental design / protocol (test parameters)\\
+% • statistical analysis\\
+% (extra material can go into appendix or supplementary material)
+
+\section{Results} \label{sec:results}
+\input{results.tex}
+% Results: what you found\\
+% • keep it “dry”, just the facts, minimal analysis\\
+% • state statistical information, like name of test used, test values, p-value, and confidence intervals
+
+
+\section{Discussion} \label{sec:discussion}
+\input{discussion.tex}
+% Discussion: how you interpret the results\\
+% • simplify and pick out characteristic features from results that support your story\\
+% • defend results against arguments that go against your story (stay professional)\\
+% • put in context, refer back to introduction (state of the art), and point out your contributions\\
+% • conclusion and future work – don‘t state anything that you might not do!
+
+
+\section{Conclusion} \label{sec:conclusion}
+\input{conclusion.tex}
+
+\section{Acknowledgements} \label{sec:acknowledgements}
+\input{acknowledgements.tex}
+% who helped?
+
+\thispagestyle{empty}
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+\clearpage
+
+% \printbibliography[type=article,title={Articles only}]
+% \printbibliography[type=book,title={Books only}]
+% \printbibliography[keyword={physics},title={Physics-related only}]
+% \printbibliography[keyword={latex},title={\LaTeX-related only}]
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
