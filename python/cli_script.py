@@ -1,5 +1,5 @@
 """Script description"""
-__author__ = "David Parker"
+__author__ = ""
 
 import argparse
 import traceback
